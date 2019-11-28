@@ -5,6 +5,7 @@
  */
 package run45;
 
+import run45.Util.DBConnector;
 import java.sql.Connection;
 import java.sql.SQLException;
 import org.junit.Before;

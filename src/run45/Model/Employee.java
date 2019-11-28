@@ -1,4 +1,4 @@
-package run45;
+package run45.Model;
 
 /**
  *

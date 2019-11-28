@@ -1,4 +1,4 @@
-package run45;
+package run45.Util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
