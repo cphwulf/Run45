@@ -20,7 +20,7 @@ public class RegMemberController {
 	int choice =0;
 
 	public void runProgram() {
-		HashMap<String,String> memParams = new HashMap<>();
+		HashMap<String,String> memberParams = new HashMap<>();
 		UI ui = new UI();
 		RegisterMemberUI regMember =  new RegisterMemberUI(ui, memParams);
 		regMember.getmemberParams();
@@ -28,8 +28,8 @@ public class RegMemberController {
 		for (String  key: keys) {
 			System.out.println(key + " -> " + memberParams.get(key));
 		}
-		Member member = new member();
-		member.setmembername(memberParams.get("Name"));
+		Member member = new Member();
+		member.setName(memberParams.get("Name"));
 		member.setBreed(memberParams.get("Breed"));
 		member.setColor(memberParams.get("Color"));
 		member.setCityOrigin(memberParams.get("CityOfOrigin"));

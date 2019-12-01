@@ -21,6 +21,10 @@ public class Member {
 	boolean active;
 	boolean competitor;
 
+	public Member() {
+
+	}
+
 	public Member(String name, String email, int year, boolean active, boolean competitor, int gender) {
 		this.gender = gender;
 		this.name = name;
@@ -33,6 +37,22 @@ public class Member {
 		this.name = name;
 		this.year = year;
 		this.active = active;
+		this.competitor = competitor;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public void setCompetitor(boolean competitor) {
 		this.competitor = competitor;
 	}
 

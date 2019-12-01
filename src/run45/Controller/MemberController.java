@@ -82,5 +82,36 @@ public class MemberController {
 		return members;
 		
 	}
-	
+	public Member getMemberFromDBbyEmail(String email) {
+		Member member = null;
+		Connection conn = null;
+		try {
+			 conn = DBConnector.getInstance().getConnection();
+		} catch (Exception e) {
+			System.out.println("Error conn" + e);
+		}
+		ResultSet result = null;
+		Statement stmt = null;
+		// Queries
+		String query = "SELECT * FROM members WHERE email = \"" + email + "\"";
+		try {
+			stmt = conn.createStatement();
+			result = stmt.executeQuery(query);
+			if (result.next()) {
+				member = new Member(
+					result.getString("name"),
+					result.getString("email"),
+					result.getInt("year"),
+					result.getBoolean("active"),
+					result.getBoolean("compete"),
+					result.getInt("gender")
+				);
+			} else { 
+				throw new Exception("Medlem findes ikke");
+			}
+		} catch (Exception e) {
+			System.out.println("Q failed " + e);
+		}
+		return member;
+	}
 }
